@@ -23,7 +23,9 @@ public class TestsBateau {
 	public void testRetirerListIfCoule() {
 		
 		int sizeListBefore =  joueur.getListBateaux().size();
-		bateau01.
+		bateau01.setCasesRestantes(0);
+		assertNotEquals(sizeListBefore, joueur.getListBateaux().size());
+		
 	}
 	
 	
