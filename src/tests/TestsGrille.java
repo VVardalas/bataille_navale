@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import Classes.Bateau;
 import Classes.Grille;
 
 public class TestsGrille {
@@ -75,9 +76,9 @@ public class TestsGrille {
 	public void testValeursGrillesValides() 
 	{
 		grille.initialiser();
-		for (int i = 0; i < grille.getLargeur; i++)
+		for (int i = 0; i < grille.getLongueur(); i++)
 		{
-			for (int j = 0; j < grille.getHauteur; j++)
+			for (int j = 0; j < grille.getHauteur(); j++)
 			{
 				assertNotNull(grille.getGrille()[i][j]);
 			}
