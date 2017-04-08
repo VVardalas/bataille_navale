@@ -18,16 +18,16 @@ public class TestsGrille {
 		grille = new Grille(10,10);
 	}
 
-	@Test
+	@Test(expected =  NegativeArraySizeException.class)
 	public void testLargeurNegative() 
 	{
-		assertNull(new Grille(-2,5));		
+		new Grille(-2,5);		
 	}
 	
-	@Test
+	@Test(expected =  NegativeArraySizeException.class)
 	public void testHauteurNegative() 
 	{
-		assertNull(new Grille(5,-3));		
+		new Grille(5,-3);		
 	}
 	
 	@Test
@@ -84,7 +84,7 @@ public class TestsGrille {
 			}
 		}
 	}
-	
+		
 	@Test
 	public void testBateauDejaPresent() 
 	{

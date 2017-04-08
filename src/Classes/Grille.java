@@ -6,11 +6,11 @@ public class Grille {
 	private int hauteur;
 	private int longueur;	
 	
-	public Grille(int hauteur, int longueur) {
+	public Grille(int hauteur, int longueur) {		
 		super();
 		grille = new int[hauteur][longueur];
 		this.hauteur = hauteur;
-		this.longueur = longueur;
+		this.longueur = longueur;	
 	}
 	
 	public int[][] getGrille() {
@@ -104,6 +104,27 @@ public class Grille {
 		}
 		return true;
 		
+	}
+
+	/**
+	 * Rempli la grille avec des 0
+	 * @return true si réussite , false sinon
+	 */
+	public boolean initialiser()  
+	{
+		if (grille != null && hauteur > 0 && longueur > 0)
+		{
+			for (int i = 0; i < longueur; i++)
+			{
+				for (int j = 0; j < hauteur; j++)
+				{
+					grille[i][j] = 0; 
+				}
+			}
+			return true;
+		}
+		return false;
+				
 	}
 	
 
