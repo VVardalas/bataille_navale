@@ -1,20 +1,100 @@
 package Classes;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Joueur {
 	
 //	Property
-	private List<Bateau> listBateaux = new ArrayList<Bateau>();
+	private Map<Integer, Bateau> listeBateaux;
+	private String nom;
+	private Grille grille;
+	private Grille grilleAdversaire;
+	
+	public Joueur(String nom)
+	{
+		super();
+		this.nom = nom;
+		listeBateaux = new HashMap<Integer,Bateau>();
+		remplirListeBateaux();
+	}
 
 //	Getters/Setters
-	public List<Bateau> getListBateaux() {
-		return listBateaux;
+	public Map<Integer, Bateau> getListBateaux() {
+		return listeBateaux;
 	}
 
-	public void setListBateaux(List<Bateau> listBateaux) {
-		this.listBateaux = listBateaux;
+	public void setListBateaux(Map<Integer, Bateau> listBateaux) {
+		this.listeBateaux = listBateaux;
+	}	
+
+	public String getNom() {
+		return nom;
 	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public Grille getGrille() {
+		return grille;
+	}
+
+	public void setGrille(Grille grille) {
+		this.grille = grille;
+	}
+
+	public Grille getGrilleAdversaire() {
+		return grilleAdversaire;
+	}
+
+	public void setGrilleAdversaire(Grille grilleAdversaire) {
+		this.grilleAdversaire = grilleAdversaire;
+	}
+	
+// Methodes
+	
+	private void remplirListeBateaux()
+	{
+		Bateau bateau1 = new Bateau(2);
+		listeBateaux.put(bateau1.getId(), bateau1);
+		
+		Bateau bateau2 = new Bateau(2);
+		listeBateaux.put(bateau2.getId(), bateau2);
+		
+		Bateau bateau3 = new Bateau(3);
+		listeBateaux.put(bateau3.getId(), bateau3);
+		
+		Bateau bateau4 = new Bateau(4);
+		listeBateaux.put(bateau4.getId(), bateau4);
+		
+		Bateau bateau5 = new Bateau(5);
+		listeBateaux.put(bateau5.getId(), bateau5);
+	}
+	
+	/**
+	 * Effectue un tir a la position x , y sur la grille de l'adversaire
+	 * @param x Coordonnée x
+	 * @param y Coordonnée y
+	 * @return -1 si erreur, 0 si raté , id du bateau touché sinon
+	 */
+	public int tir(int x, int y)
+	{
+		int retour;
+		if (grilleAdversaire == null || x < 0 || y < 0 || x > grilleAdversaire.getLongueur() || y > grilleAdversaire.getHauteur())
+		{
+			retour = -1;
+		}
+		else
+		{
+			retour = grilleAdversaire.getGrille()[x][y];
+			if (retour > 0)
+			{				
+				grilleAdversaire.getGrille()[x][y] = 0;
+			}
+		}
+		return retour;
+	}
+	
 	
 }
