@@ -16,6 +16,7 @@ public class Joueur {
 		super();
 		this.nom = nom;
 		listeBateaux = new HashMap<Integer,Bateau>();
+		grille = new Grille(15,15);
 		remplirListeBateaux();
 	}
 

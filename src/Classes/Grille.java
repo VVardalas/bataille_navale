@@ -11,6 +11,7 @@ public class Grille {
 		grille = new int[hauteur][longueur];
 		this.hauteur = hauteur;
 		this.longueur = longueur;	
+		initialiser();
 	}
 	
 	public int[][] getGrille() {
@@ -110,7 +111,7 @@ public class Grille {
 	 * Rempli la grille avec des 0
 	 * @return true si réussite , false sinon
 	 */
-	public boolean initialiser()  
+	private boolean initialiser()  
 	{
 		if (grille != null && hauteur > 0 && longueur > 0)
 		{

@@ -75,7 +75,6 @@ public class TestsGrille {
 	@Test
 	public void testValeursGrillesValides() 
 	{
-		grille.initialiser();
 		for (int i = 0; i < grille.getLongueur(); i++)
 		{
 			for (int j = 0; j < grille.getHauteur(); j++)
