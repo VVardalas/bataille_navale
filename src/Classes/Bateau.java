@@ -43,6 +43,12 @@ public class Bateau {
 		this.id = id;
 	}
 	
+// Methodes
 	
+	public int retirerUneCase()
+	{
+		casesRestantes--;
+		return casesRestantes;
+	}
 	
 }

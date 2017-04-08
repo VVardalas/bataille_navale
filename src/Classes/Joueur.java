@@ -20,12 +20,12 @@ public class Joueur {
 	}
 
 //	Getters/Setters
-	public Map<Integer, Bateau> getListBateaux() {
+	public Map<Integer, Bateau> getListeBateaux() {
 		return listeBateaux;
 	}
 
-	public void setListBateaux(Map<Integer, Bateau> listBateaux) {
-		this.listeBateaux = listBateaux;
+	public void setListeBateaux(Map<Integer, Bateau> listeBateaux) {
+		this.listeBateaux = listeBateaux;
 	}	
 
 	public String getNom() {
