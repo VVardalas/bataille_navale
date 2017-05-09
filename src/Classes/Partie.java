@@ -9,10 +9,10 @@ import java.util.Scanner;
 
 public class Partie {
 	
-	private static List<Joueur> listeJoueurs = new ArrayList<Joueur>();
+	private static List<Joueur> listeJoueurs = new ArrayList<Joueur>(); //vous gÃ©rez Ã  plus de deux joueurs ici (et dans "executerUnTir"), mais pas dans Joueur, c'est dommage
 	
 	private static String nomGagnant;
-	
+
 	public static void executerUnTir(Joueur joueur, Joueur adversaire, int x, int y)
 	{
 		int idBateau = joueur.tir(x, y);
@@ -63,7 +63,7 @@ public class Partie {
 					boolean ok = true;
 					int xDebut = -1, yDebut = -1, xFin = -1, yFin = -1;
 					do{
-						System.out.println(" Entrer la position X de début : ");
+						System.out.println(" Entrer la position X de dï¿½but : ");
 						try
 						{
 							xDebut = s.nextInt();
@@ -82,7 +82,7 @@ public class Partie {
 					}while (!ok);
 					
 					do{
-						System.out.println(" Entrer la position Y de début : ");
+						System.out.println(" Entrer la position Y de dï¿½but : ");
 						try
 						{
 							yDebut = s.nextInt();

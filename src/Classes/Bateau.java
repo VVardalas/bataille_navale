@@ -1,4 +1,4 @@
-package Classes;
+package Classes; // un nom de package doit commencer par une minuscule
 
 public class Bateau {
 //	Property

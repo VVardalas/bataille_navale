@@ -16,7 +16,7 @@ public class Joueur {
 		super();
 		this.nom = nom;
 		listeBateaux = new HashMap<Integer,Bateau>();
-		grille = new Grille(15,15);
+		grille = new Grille(15,15); //Pas paramÃ¨trable du coup ? :c
 		remplirListeBateaux();
 	}
 
@@ -57,6 +57,7 @@ public class Joueur {
 	
 	private void remplirListeBateaux()
 	{
+		// une petite boucle for ?
 		Bateau bateau1 = new Bateau(2);
 		listeBateaux.put(bateau1.getId(), bateau1);
 		
@@ -75,14 +76,14 @@ public class Joueur {
 	
 	/**
 	 * Effectue un tir a la position x , y sur la grille de l'adversaire
-	 * @param x Coordonnée x
-	 * @param y Coordonnée y
-	 * @return -1 si erreur, 0 si raté , id du bateau touché sinon
+	 * @param x Coordonnï¿½e x
+	 * @param y Coordonnï¿½e y
+	 * @return -1 si erreur, 0 si ratï¿½ , id du bateau touchï¿½ sinon
 	 */
 	public int tir(int x, int y)
 	{
 		int retour;
-		if (grilleAdversaire == null || x < 0 || y < 0 || x > grilleAdversaire.getLongueur() || y > grilleAdversaire.getHauteur())
+		if (grilleAdversaire == null || x < 0 || y < 0 || x > grilleAdversaire.getLongueur() || y > grilleAdversaire.getHauteur()) // quand vous testerez cette fonction, vous aurez des surprises :p 
 		{
 			retour = -1;
 		}

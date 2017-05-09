@@ -17,7 +17,7 @@ public class Grille {
 	public int[][] getGrille() {
 		return grille;
 	}
-	public void setGrille(int[][] grille) {
+	public void setGrille(int[][] grille) { // <--- mauvaise idÃ©e, Ã§a ^^
 		this.grille = grille;
 	}
 	public int getHauteur() {
@@ -33,7 +33,7 @@ public class Grille {
 		this.longueur = longueur;
 	}
 	
-	public boolean ajouterUnBateau(int xDebut, int yDebut, int xFin, int yFin, Bateau bateau)
+	public boolean ajouterUnBateau(int xDebut, int yDebut, int xFin, int yFin, Bateau bateau) //un peu dangereux de prÃ©ciser deux points si votre bateau n'est qu'en une dimension
 	{
 		if (xDebut < 0 || yDebut < 0 || xFin < 0 || yFin < 0 || xDebut > longueur || yFin > hauteur || xFin > longueur || yFin > hauteur)
 		{
@@ -43,7 +43,7 @@ public class Grille {
 		{
 			if (pasDeBateauSurLaTrajectoire(xDebut, yDebut, xFin, yFin))
 			{
-				if (xDebut == xFin) // Bateau positionné à la verticale
+				if (xDebut == xFin) // Bateau positionnï¿½ ï¿½ la verticale // j'ai comme l'impression que votre document n'est pas en utf-8 :p
 				{
 					int yCourant = yDebut;
 					while (yCourant <= yFin)
@@ -54,7 +54,7 @@ public class Grille {
 				}
 				else
 				{
-					if (yDebut == yFin) // Bateau positionné à l'horizontale
+					if (yDebut == yFin) // Bateau positionnï¿½ ï¿½ l'horizontale
 					{
 						int xCourant = xDebut;
 						while (xCourant <= xFin)
@@ -70,18 +70,16 @@ public class Grille {
 			{
 				return false;
 			}
-			
-		}		
-		
+		}				
 	}
 	private boolean pasDeBateauSurLaTrajectoire(int xDebut, int yDebut, int xFin, int yFin)
 	{
-		if (xDebut == xFin) // Bateau positionné à la verticale
+		if (xDebut == xFin) // Bateau positionnï¿½ ï¿½ la verticale
 		{
 			int yCourant = yDebut;
 			while (yCourant <= yFin)
 			{
-				if(grille[xDebut][yCourant] != 0) //Si il y'a déjà un bateau à cette position
+				if(grille[xDebut][yCourant] != 0) //Si il y'a dï¿½jï¿½ un bateau ï¿½ cette position
 				{
 					return false;
 				}			
@@ -90,12 +88,12 @@ public class Grille {
 		}
 		else
 		{
-			if (yDebut == yFin) // Bateau positionné à l'horizontale
+			if (yDebut == yFin) // Bateau positionnï¿½ ï¿½ l'horizontale
 			{
 				int xCourant = xDebut;
 				while (xCourant <= xFin)
 				{
-					if(grille[xCourant][yDebut] != 0) //Si il y'a déjà un bateau à cette position
+					if(grille[xCourant][yDebut] != 0) //Si il y'a dï¿½jï¿½ un bateau ï¿½ cette position
 					{
 						return false;
 					}
@@ -109,7 +107,7 @@ public class Grille {
 
 	/**
 	 * Rempli la grille avec des 0
-	 * @return true si réussite , false sinon
+	 * @return true si rï¿½ussite , false sinon
 	 */
 	private boolean initialiser()  
 	{
@@ -119,7 +117,7 @@ public class Grille {
 			{
 				for (int j = 0; j < hauteur; j++)
 				{
-					grille[i][j] = 0; 
+					grille[i][j] = 0; // les cases d'un tableau Java sont automatiquement initialisÃ©es Ã  0
 				}
 			}
 			return true;
